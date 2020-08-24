@@ -1,0 +1,412 @@
+{
+    "artists": [
+        {
+            "id": "a1",
+            "name": "Miley Cyrus",
+            "description": "Miley Cyrus, hiện đang là 1 diễn viên - ca sĩ - nhà soạn nhạc tuổi Teen nổi tiếng trên TG và được đa số các bạn Tween và Teen yêu thích qua vai diễn Miley Stewart / Hannah Montana trong serie phim đang rất được ưa chuộng trên Disney Channel: Hannah Montana\nNhưng thật ra Miley Cyrus tên thật là Destiny Hope Cyrus, sinh ra và lớn lên tại Mỹ, cô sinh ngày 23.11.1992 (tuổi trẻ tài cao ) và là con gái của của ngôi sao nhạc đồng quê nổi tiếng: Billy Ray Cyrus Cô có hai anh trai: Christopher Cody và Trace, một chị gái Brand, một em trai Basion và một em gái Noah Lindsey Cyrus, cũng là một diễn viên. Miley và 2 anh trai của cô có thể vừa hát vừa chơi guitar, riêng Miley có thẻ chơi cà piano. Destiny Hope là cái tên được bố mẹ cô đặt cho vì họ mong muốn con gái của họ có thể hoàn thành mọi thứ một cách hoàn hảo nhất. Còn với cái tên Miley mà chúng ta biết hiện giờ chỉ là cái \"nick name\" của cô vì lúc bé cô thường hay cười mỉm (Smile → Smiley → Miley)",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w360_r1x1_jpeg/avatars/4/c/4cab2098108298e7d6ac5f1d423c7e51_1494555238.jpg"
+        },
+        {
+            "id": "a2",
+            "name": "Clean Bandit",
+            "description": "Clean Bandit là một nhóm nhạc điện tử được thành lập tại Cambridge, Anh Quốc vào năm 2009. Nhóm nhạc bao gồm các thành viên: Jack Patterson, Luke Patterson, Grace Chatto, Milan Neil Amin-Smith.",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w360_r1x1_jpeg/avatars/a/2/a212b2d0257a08cf0b939c06aa8040f0_1464322860.jpg"
+        },
+        {
+            "id": "a3",
+            "name": "Mabel",
+            "description": "...",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w360_r1x1_jpeg/avatars/f/0/f0ead071b9d8cc5634e5f4877aba44c3_1508572322.jpg"
+        },
+        {
+            "id": "a4",
+            "name": "24KGoldn",
+            "description": "24KGoldn...",
+            "cover": "24KGoldn"
+        },
+        {
+            "id": "a5",
+            "name": "Anne-Marie",
+            "description": "Năm 2013, Anne-Marie đã phát hành bản demo solo cho Rocket Records mang tên \"Summer Girl\"\nVào tháng 6/2015, cô đã phát hành EP đầu tay của mình có tên 'Karate'. Tháng 11 năm đó, Anne-Marie đã phát hành đĩa đơn \"Do It Right\", đạt được vị trí thứ 90 trên bảng xếp hạng đĩa đơn của Anh",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w360_r1x1_jpeg/avatars/1/e/1eeae27c7d490750392d01cb14bde4e6_1516956585.jpg"
+        },
+        {
+            "id": "a6",
+            "name": "Anne-Marie 2",
+            "description": "Năm 2013, Anne-Marie đã phát hành bản demo solo cho Rocket Records mang tên \"Summer Girl\"\nVào tháng 6/2015, cô đã phát hành EP đầu tay của mình có tên 'Karate'. Tháng 11 năm đó, Anne-Marie đã phát hành đĩa đơn đạt được vị trí thứ 90 trên bảng xếp hạng đĩa đơn của Anh",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w360_r1x1_jpeg/avatars/1/e/1eeae27c7d490750392d01cb14bde4e6_1516956585.jpg"
+        },
+        {
+            "id": "a7",
+            "name": "Anne-Marie 3",
+            "description": "Năm 2013, Anne-Marie đã phát hành bản demo solo cho Rocket Records mang tên \"Summer Girl\"\nVào tháng 6/2015, cô đã phát hành EP đầu tay của mình có tên 'Karate'. Tháng 11 năm đó, Anne-Marie đã phát hành đĩa đơn đạt được vị trí thứ 90 trên bảng xếp hạng đĩa đơn của Anh",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w360_r1x1_jpeg/avatars/1/e/1eeae27c7d490750392d01cb14bde4e6_1516956585.jpg"
+        }
+    ],
+    "songs": [
+        {
+            "id": "s1",
+            "name": "Midnight Sky",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/c/0/3/2/c0325a7d4f238e750091fe4e7538d7e6.jpg",
+            "length": "03:43",
+            "artists": [
+                "a1"
+            ]
+        },
+        {
+            "id": "s2",
+            "name": "Tick Tock (feat. 24kGoldn)",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/c/0/3/2/c0325a7d4f238e750091fe4e7538d7e6.jpg",
+            "length": "02:58",
+            "artists": [
+                "a2",
+                "a3",
+                "a4"
+            ]
+        },
+        {
+            "id": "s3",
+            "name": "To Be Young",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/0/7/d/4/07d4c1e9124829e2859cbdfe5e2e18b3.jpg",
+            "length": "03:24",
+            "artists": [
+                "a5"
+            ]
+        },
+        {
+            "id": "s4",
+            "name": "To Be Young 2",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/0/7/d/4/07d4c1e9124829e2859cbdfe5e2e18b3.jpg",
+            "length": "03:24",
+            "artists": [
+                "a6"
+            ]
+        },
+        {
+            "id": "s5",
+            "name": "To Be Young 3",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/0/7/d/4/07d4c1e9124829e2859cbdfe5e2e18b3.jpg",
+            "length": "03:24",
+            "artists": [
+                "a7"
+            ]
+        },
+        {
+            "id": "s6",
+            "name": "To Be Young 4",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/0/7/d/4/07d4c1e9124829e2859cbdfe5e2e18b3.jpg",
+            "length": "03:24",
+            "artists": [
+                "a7"
+            ]
+        },
+        {
+            "id": "s7",
+            "name": "To Be Young 5",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/0/7/d/4/07d4c1e9124829e2859cbdfe5e2e18b3.jpg",
+            "length": "03:24",
+            "artists": [
+                "a7"
+            ]
+        },
+        {
+            "id": "s8",
+            "name": "To Be Young 6",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/0/7/d/4/07d4c1e9124829e2859cbdfe5e2e18b3.jpg",
+            "length": "03:24",
+            "artists": [
+                "a7"
+            ]
+        }
+    ],
+    "playlists": [
+        {
+            "id": "p1",
+            "name": "US-UK",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/8/7/7/3/8773f6a6da75776c24a2e79b29dc2da7.jpg",
+            "songs": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8"
+            ]
+        },
+        {
+            "id": "p2",
+            "name": "Nhe Nhang Mot Tinh Yeu!",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/1/e/2/01e2be0d6eeec1f048a68b1f0f49ff17.jpg",
+            "songs": [
+                "s2",
+                "s5",
+                "s1",
+                "s7",
+                "s6",
+                "s3",
+                "s4",
+                "s8"
+            ]
+        },
+        {
+            "id": "p3",
+            "name": "Mot Goc Indie",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/c/c/f/3/ccf37a051671b9a47452461c6e2c5e6d.jpg",
+            "songs": [
+                "s3"
+            ]
+        },
+        {
+            "id": "p4",
+            "name": "Accoustic Gay Nghien",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/e/c/b/2/ecb27b329d31e80d928c99b9ec8a242b.jpg",
+            "songs": [
+                "s4",
+                "s3",
+                "s6",
+                "s5",
+                "s7",
+                "s2",
+                "s8"
+            ]
+        },
+        {
+            "id": "p5",
+            "name": "Accoustic Gay Nghien",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/e/c/b/2/ecb27b329d31e80d928c99b9ec8a242b.jpg",
+            "songs": [
+                "s5",
+                "s4",
+                "s3"
+            ]
+        },
+        {
+            "id": "p6",
+            "name": "Hot Covers",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/a/7/a/6/a7a62ac7aac295c457d123468ceaa460.jpg",
+            "songs": [
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s7",
+                "s3",
+                "s4",
+                "s8"
+            ]
+        },
+        {
+            "id": "p7",
+            "name": "Hot Covers",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/a/7/a/6/a7a62ac7aac295c457d123468ceaa460.jpg",
+            "songs": [
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4",
+                "s8"
+            ]
+        },
+        {
+            "id": "p8",
+            "name": "Nhac Phim Han Moi Nhat",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p9",
+            "name": "Nhac Phim Han Moi Nhat 9",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p10",
+            "name": "Nhac Phim Han Moi Nhat 10",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p11",
+            "name": "Nhac Phim Han Moi Nhat 11",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p12",
+            "name": "Nhac Phim Han Moi Nhat 12",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p13",
+            "name": "Nhac Phim Han Moi Nhat 13",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p14",
+            "name": "Nhac Phim Han Moi Nhat 14",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p15",
+            "name": "Nhac Phim Han Moi Nhat 15",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p16",
+            "name": "Nhac Phim Han Moi Nhat 16",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p17",
+            "name": "Nhac Phim Han Moi Nhat 17",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p18",
+            "name": "Nhac Phim Han Moi Nhat 18",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p19",
+            "name": "Nhac Phim Han Moi Nhat 19",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/d/d/4/a/dd4a0bc51c91ef1ced6c6348d6de0e8d.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        },
+        {
+            "id": "p20",
+            "name": "Nhac Viet Nghe Nhieu",
+            "cover": "https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/1/4/7/01477521b69e1921bafe110a878aafdc.jpg",
+            "songs": [
+                "s8",
+                "s7",
+                "s6",
+                "s2",
+                "s5",
+                "s1",
+                "s3",
+                "s4"
+            ]
+        }
+        
+    ]
+}
