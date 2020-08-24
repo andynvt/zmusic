@@ -41,13 +41,13 @@ class _HomeViewState extends State<_HomeView> {
               }
               final List<PlayListInfo> list = service.playlists.values.toList();
               return GridView.builder(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(16),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8,
-                  childAspectRatio: 0.7,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.75,
                 ),
                 itemCount: list.length,
                 itemBuilder: (_, index) {
@@ -59,11 +59,58 @@ class _HomeViewState extends State<_HomeView> {
                     },
                     child: Column(
                       children: [
-                        Hero(
-                          tag: 'img-${list[index].id}',
-                          child: Image.network(
-                            list[index].cover,
-                          ),
+                        Stack(
+                          children: [
+                            Hero(
+                              tag: 'img-${list[index].id}',
+                              child: Image.network(
+                                list[index].cover,
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 4,
+                              right: 4,
+                              child: Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.black38,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Icon(
+                                  Icons.play_circle_outline,
+                                  size: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              child: Container(
+                                // width: 40,
+                                height: 20,
+                                padding: const EdgeInsets.symmetric(horizontal: 4),
+                                decoration: BoxDecoration(
+                                  color: Colors.black38,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.play_circle_outline,
+                                      size: 20,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 6),
+                                    Text(
+                                      list[index].songIds.length.toString(),
+                                      style: const TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                         SizedBox(height: 6),
                         Container(
@@ -73,9 +120,10 @@ class _HomeViewState extends State<_HomeView> {
                             list[index].name,
                             maxLines: 2,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 18),
                           ),
                         ),
+                        SizedBox(height: 6),
                       ],
                     ),
                   );
