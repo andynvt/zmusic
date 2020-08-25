@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zmusic/model/playlist_info.dart';
+import 'package:zmusic/module/module.dart';
 import 'package:zmusic/service/service.dart';
 
 import 'detail_model.dart';
@@ -33,7 +34,7 @@ class _DetailViewState extends State<_DetailView> {
     final model = Provider.of<DetailModel>(context);
 
     if (_width == 0.0) {
-      _width = MediaQuery.of(context).size.width / 2;
+      _width = MediaQuery.of(context).size.width / 3;
     }
 
     return Consumer<PlayListInfo>(builder: (_, info, __) {
@@ -77,7 +78,15 @@ class _DetailViewState extends State<_DetailView> {
                           Icons.favorite_border,
                           size: 30,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => createPlayer(
+                                DataService.shared().songs[info.songIds],
+                              ),
+                            ),
+                          );
+                        },
                       ),
                       SizedBox(width: 16),
                       InkWell(
@@ -130,7 +139,13 @@ class _DetailViewState extends State<_DetailView> {
                             artistText += ' ';
                           }
                           return InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => createPlayer(song),
+                                ),
+                              );
+                            },
                             child: Container(
                               height: 80,
                               alignment: Alignment.center,
