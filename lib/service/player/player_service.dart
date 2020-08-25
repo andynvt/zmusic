@@ -47,9 +47,9 @@ class PlayerService extends ChangeNotifier {
     });
   }
 
-  void play() {
+  void play(String id) {
     Duration p = position == null ? Duration(milliseconds: 0) : position;
-    _player.play('https://vpopkaraoke.com/zmusic/s3.mp3', position: p).then((value) {
+    _player.play('https://vpopkaraoke.com/zmusic/$id.mp3', position: p).then((value) {
       if (value == 1) {
         isPlaying = true;
         notifyListeners();
@@ -70,8 +70,9 @@ class PlayerService extends ChangeNotifier {
     _player.stop();
   }
 
-  void seek() {
-    _player.seek(Duration(milliseconds: 1200));
+  void seek(double value) {
+    double position = value * duration.inMilliseconds;
+    _player.seek(Duration(milliseconds: position.round()));
   }
 
   void resume() {

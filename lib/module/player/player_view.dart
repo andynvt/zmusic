@@ -27,7 +27,7 @@ class _PlayerView extends StatefulWidget {
 class _PlayerViewState extends State<_PlayerView> {
   @override
   void initState() {
-    PlayerService.shared().play();
+    PlayerService.shared().play(widget.info.id);
     super.initState();
   }
 
@@ -111,7 +111,7 @@ class _PlayerViewState extends State<_PlayerView> {
                                     activeColor: Colors.black,
                                     inactiveColor: Colors.grey,
                                     value: service.sliderValue,
-                                    onChanged: (v) {},
+                                    onChanged: PlayerService.shared().seek,
                                   ),
                                 ),
                                 SizedBox(
@@ -159,7 +159,7 @@ class _PlayerViewState extends State<_PlayerView> {
                                     if (service.isPlaying) {
                                       PlayerService.shared().pause();
                                     } else {
-                                      PlayerService.shared().play();
+                                      PlayerService.shared().play(info.id);
                                     }
                                   },
                                 );
