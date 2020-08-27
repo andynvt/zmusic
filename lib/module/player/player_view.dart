@@ -131,34 +131,35 @@ class _PlayerViewState extends State<_PlayerView> {
                                   );
                                 },
                               ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    icon: Icon(Icons.repeat),
-                                    onPressed: () {},
-                                  ),
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    icon: Icon(
-                                      Icons.skip_previous,
-                                      size: 30,
+                              Consumer<PlayerService>(builder: (_, service, __) {
+                                return Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    IconButton(
+                                      padding: EdgeInsets.zero,
+                                      icon: Icon(
+                                        Icons.repeat,
+                                        color: service.isRepeat ? Colors.black : Colors.grey,
+                                      ),
+                                      onPressed: PlayerService.shared().repeat,
                                     ),
-                                    onPressed: () {
-                                      PlayerService.shared().previous();
-                                    },
-                                  ),
-                                  Container(
-                                    width: 70,
-                                    height: 70,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      shape: BoxShape.circle,
+                                    IconButton(
+                                      padding: EdgeInsets.zero,
+                                      icon: Icon(
+                                        Icons.skip_previous,
+                                        size: 30,
+                                      ),
+                                      onPressed: PlayerService.shared().previous,
                                     ),
-                                    child: Consumer<PlayerService>(builder: (_, service, __) {
-                                      return IconButton(
+                                    Container(
+                                      width: 70,
+                                      height: 70,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: IconButton(
                                         padding: EdgeInsets.zero,
                                         icon: Icon(
                                           service.isPlaying ? Icons.pause : Icons.play_arrow,
@@ -172,26 +173,27 @@ class _PlayerViewState extends State<_PlayerView> {
                                             PlayerService.shared().resume();
                                           }
                                         },
-                                      );
-                                    }),
-                                  ),
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    icon: Icon(
-                                      Icons.skip_next,
-                                      size: 30,
+                                      ),
                                     ),
-                                    onPressed: () {
-                                      PlayerService.shared().next();
-                                    },
-                                  ),
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    icon: Icon(Icons.shuffle),
-                                    onPressed: () {},
-                                  ),
-                                ],
-                              ),
+                                    IconButton(
+                                      padding: EdgeInsets.zero,
+                                      icon: Icon(
+                                        Icons.skip_next,
+                                        size: 30,
+                                      ),
+                                      onPressed: PlayerService.shared().next,
+                                    ),
+                                    IconButton(
+                                      padding: EdgeInsets.zero,
+                                      icon: Icon(
+                                        Icons.shuffle,
+                                        color: service.isShuffle ? Colors.black : Colors.grey,
+                                      ),
+                                      onPressed: PlayerService.shared().shuffle,
+                                    ),
+                                  ],
+                                );
+                              }),
                             ],
                           ),
                         ),

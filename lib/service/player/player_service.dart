@@ -16,9 +16,11 @@ class PlayerService extends ChangeNotifier {
   Duration position;
 
   SongInfo playingSong;
-  final List<String> songIds = [];
+  final List<String> playlist = [];
   int index = -1;
   bool isPlaying = false;
+  bool isRepeat = false;
+  bool isShuffle = false;
   String get durationText => _formatDuration(duration);
   String get positionText => _formatDuration(position);
   double get sliderValue {
@@ -54,19 +56,19 @@ class PlayerService extends ChangeNotifier {
   }
 
   void initPlaylist(List<String> ids) {
-    songIds.clear();
-    songIds.addAll(ids);
-    String id = songIds.first;
+    playlist.clear();
+    playlist.addAll(ids);
+    String id = playlist.first;
     playingSong = DataService.shared().songs[id];
     notifyListeners();
   }
 
   void play(int index, {Function callback}) {
-    String id = songIds[index];
+    String id = playlist[index];
     playingSong = DataService.shared().songs[id];
     notifyListeners();
     if (this.index != index) {
-      String id = songIds[index];
+      String id = playlist[index];
       Duration p = Duration(milliseconds: 0);
       _downloadFile(NetworkAPI.MUSIC_URL(id), id).then((path) {
         if (callback != null) callback();
@@ -113,14 +115,30 @@ class PlayerService extends ChangeNotifier {
 
   void next() {
     pause();
-    int i = index == songIds.length - 1 ? 0 : index + 1;
+    if (isShuffle) {
+      playlist.shuffle();
+    }
+    int i = index == playlist.length - 1 ? 0 : index + 1;
     play(i);
   }
 
   void previous() {
     pause();
-    int i = index == 0 ? songIds.length - 1 : index - 1;
+    if (isShuffle) {
+      playlist.shuffle();
+    }
+    int i = index == 0 ? playlist.length - 1 : index - 1;
     play(i);
+  }
+
+  void repeat() {
+    isRepeat = !isRepeat;
+    notifyListeners();
+  }
+
+  void shuffle() {
+    isShuffle = !isShuffle;
+    notifyListeners();
   }
 
   Future<String> _downloadFile(String url, String filename) async {
