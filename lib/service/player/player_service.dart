@@ -53,6 +53,10 @@ class PlayerService extends ChangeNotifier {
       position = p;
       notifyListeners();
     });
+
+    _player.onPlayerCompletion.listen((_) {
+      _complete();
+    });
   }
 
   void initPlaylist(List<String> ids) {
@@ -139,6 +143,10 @@ class PlayerService extends ChangeNotifier {
   void shuffle() {
     isShuffle = !isShuffle;
     notifyListeners();
+  }
+
+  void _complete() {
+    next();
   }
 
   Future<String> _downloadFile(String url, String filename) async {
