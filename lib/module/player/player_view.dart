@@ -146,7 +146,9 @@ class _PlayerViewState extends State<_PlayerView> {
                                       Icons.skip_previous,
                                       size: 30,
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      PlayerService.shared().previous();
+                                    },
                                   ),
                                   Container(
                                     width: 70,
@@ -180,7 +182,7 @@ class _PlayerViewState extends State<_PlayerView> {
                                       size: 30,
                                     ),
                                     onPressed: () {
-                                      PlayerService.shared().stop();
+                                      PlayerService.shared().next();
                                     },
                                   ),
                                   IconButton(

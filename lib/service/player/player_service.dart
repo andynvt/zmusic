@@ -102,6 +102,16 @@ class PlayerService extends ChangeNotifier {
     });
   }
 
+  void next() {
+    int i = index == songIds.length - 1 ? 0 : index + 1;
+    play(i);
+  }
+
+  void previous() {
+    int i = index == 0 ? songIds.length - 1 : index - 1;
+    play(i);
+  }
+
   Future<String> _downloadFile(String url, String filename) async {
     String dir = (await getApplicationDocumentsDirectory()).path;
     String path = '$dir/$filename.mp3';
