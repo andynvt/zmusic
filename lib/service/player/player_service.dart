@@ -12,6 +12,8 @@ class PlayerService extends ChangeNotifier {
   Duration duration;
   Duration position;
 
+  final List<String> songIds = [];
+  int index = -1;
   bool isPlaying = false;
   String get durationText => _formatDuration(duration);
   String get positionText => _formatDuration(position);
@@ -47,14 +49,23 @@ class PlayerService extends ChangeNotifier {
     });
   }
 
-  void play(String id) {
-    Duration p = position == null ? Duration(milliseconds: 0) : position;
-    _player.play('https://vpopkaraoke.com/zmusic/$id.mp3', position: p).then((value) {
-      if (value == 1) {
-        isPlaying = true;
-        notifyListeners();
-      }
-    });
+  void initPlaylist(List<String> ids) {
+    songIds.clear();
+    songIds.addAll(ids);
+  }
+
+  void play(int index) {
+    if (this.index != index) {
+      String id = songIds[index];
+      Duration p = Duration(milliseconds: 0);
+      _player.play('https://vpopkaraoke.com/zmusic/$id.mp3', position: p).then((value) {
+        if (value == 1) {
+          this.index = index;
+          isPlaying = true;
+          notifyListeners();
+        }
+      });
+    }
   }
 
   void pause() {
@@ -67,7 +78,10 @@ class PlayerService extends ChangeNotifier {
   }
 
   void stop() {
-    _player.stop();
+    _player.stop().then((value) {
+      isPlaying = false;
+      notifyListeners();
+    });
   }
 
   void seek(double value) {
@@ -76,7 +90,12 @@ class PlayerService extends ChangeNotifier {
   }
 
   void resume() {
-    _player.resume();
+    _player.resume().then((value) {
+      if (value == 1) {
+        isPlaying = true;
+        notifyListeners();
+      }
+    });
   }
 
   Future<File> _downloadFile(String url, String filename) async {

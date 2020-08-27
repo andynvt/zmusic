@@ -78,31 +78,25 @@ class _DetailViewState extends State<_DetailView> {
                           Icons.favorite_border,
                           size: 30,
                         ),
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => createPlayer(
-                                DataService.shared().songs[info.songIds],
-                              ),
-                            ),
-                          );
-                        },
+                        onPressed: () {},
                       ),
                       SizedBox(width: 16),
                       InkWell(
                         borderRadius: BorderRadius.circular(35),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => createPlayer(info)),
+                          );
+                        },
                         child: Container(
                           width: 60,
                           height: 60,
                           decoration: BoxDecoration(
-                            color: Colors.blue,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons.play_arrow,
                             size: 35,
-                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -142,7 +136,7 @@ class _DetailViewState extends State<_DetailView> {
                             onTap: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (_) => createPlayer(song),
+                                  builder: (_) => createPlayer(info, index: index),
                                 ),
                               );
                             },
