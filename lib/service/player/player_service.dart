@@ -4,6 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
+import 'package:zmusic/service/network/network_api.dart';
 
 class PlayerService extends ChangeNotifier {
   static PlayerService _sInstance;
@@ -54,16 +55,19 @@ class PlayerService extends ChangeNotifier {
     songIds.addAll(ids);
   }
 
-  void play(int index) {
+  void play(int index, {Function callback}) {
     if (this.index != index) {
       String id = songIds[index];
       Duration p = Duration(milliseconds: 0);
-      _player.play('https://vpopkaraoke.com/zmusic/$id.mp3', position: p).then((value) {
-        if (value == 1) {
-          this.index = index;
-          isPlaying = true;
-          notifyListeners();
-        }
+      _downloadFile(NetworkAPI.MUSIC_URL(id), id).then((path) {
+        if (callback != null) callback();
+        _player.play(path, position: p).then((value) {
+          if (value == 1) {
+            this.index = index;
+            isPlaying = true;
+            notifyListeners();
+          }
+        });
       });
     }
   }
@@ -98,14 +102,19 @@ class PlayerService extends ChangeNotifier {
     });
   }
 
-  Future<File> _downloadFile(String url, String filename) async {
+  Future<String> _downloadFile(String url, String filename) async {
+    String dir = (await getApplicationDocumentsDirectory()).path;
+    String path = '$dir/$filename.mp3';
+
+    if (await File(path).exists()) {
+      return path;
+    }
     http.Client client = new http.Client();
     var req = await client.get(Uri.parse(url));
     var bytes = req.bodyBytes;
-    String dir = (await getApplicationDocumentsDirectory()).path;
-    File file = new File('$dir/$filename');
+    File file = new File(path);
     await file.writeAsBytes(bytes);
-    return file;
+    return path;
   }
 
   String _formatDuration(Duration duration) {
