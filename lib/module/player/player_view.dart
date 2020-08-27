@@ -49,8 +49,8 @@ class _PlayerViewState extends State<_PlayerView> {
         children: [
           SafeArea(
             child: ChangeNotifierProvider.value(
-              value: songInfo,
-              child: Consumer<SongInfo>(builder: (_, info, __) {
+              value: PlayerService.shared(),
+              child: Consumer<PlayerService>(builder: (_, service, __) {
                 return Center(
                   child: Column(
                     children: [
@@ -70,7 +70,7 @@ class _PlayerViewState extends State<_PlayerView> {
                         width: double.infinity,
                         margin: const EdgeInsets.symmetric(horizontal: 50),
                         child: Image.network(
-                          info.cover,
+                          service.playingSong.cover,
                         ),
                       ),
                       Expanded(
@@ -83,17 +83,17 @@ class _PlayerViewState extends State<_PlayerView> {
                               Column(
                                 children: [
                                   Text(
-                                    info.name,
+                                    service.playingSong.name,
                                     style: const TextStyle(fontSize: 24),
                                   ),
                                   SizedBox(height: 8),
                                   () {
                                     String artistText = '';
-                                    for (int i = 0; i < info.artistIds.length; i++) {
-                                      final id = info.artistIds[i];
+                                    for (int i = 0; i < service.playingSong.artistIds.length; i++) {
+                                      final id = service.playingSong.artistIds[i];
                                       final name = DataService.shared().artists[id].name;
                                       artistText += name;
-                                      if (i < info.artistIds.length - 1) {
+                                      if (i < service.playingSong.artistIds.length - 1) {
                                         artistText += ',';
                                       }
                                       artistText += ' ';

@@ -4,7 +4,9 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
+import 'package:zmusic/model/song_info.dart';
 import 'package:zmusic/service/network/network_api.dart';
+import 'package:zmusic/service/service.dart';
 
 class PlayerService extends ChangeNotifier {
   static PlayerService _sInstance;
@@ -13,6 +15,7 @@ class PlayerService extends ChangeNotifier {
   Duration duration;
   Duration position;
 
+  SongInfo playingSong;
   final List<String> songIds = [];
   int index = -1;
   bool isPlaying = false;
@@ -53,9 +56,15 @@ class PlayerService extends ChangeNotifier {
   void initPlaylist(List<String> ids) {
     songIds.clear();
     songIds.addAll(ids);
+    String id = songIds.first;
+    playingSong = DataService.shared().songs[id];
+    notifyListeners();
   }
 
   void play(int index, {Function callback}) {
+    String id = songIds[index];
+    playingSong = DataService.shared().songs[id];
+    notifyListeners();
     if (this.index != index) {
       String id = songIds[index];
       Duration p = Duration(milliseconds: 0);
@@ -103,11 +112,13 @@ class PlayerService extends ChangeNotifier {
   }
 
   void next() {
+    pause();
     int i = index == songIds.length - 1 ? 0 : index + 1;
     play(i);
   }
 
   void previous() {
+    pause();
     int i = index == 0 ? songIds.length - 1 : index - 1;
     play(i);
   }
